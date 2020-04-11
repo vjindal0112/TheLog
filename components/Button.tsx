@@ -1,20 +1,23 @@
+import * as React from 'react';
 import styled from 'styled-components';
+import { BORDER_RADIUS } from '../constants';
 
 interface ButtonProps {
-  background: string;
-  content: string;
+  background?: string;
 }
 
 const StyledButton = styled.button<ButtonProps>`
-  background-color: ${({ background }) => background};
-  border-radius: 0.25rem;
-  width: 2rem;
-  height: 1rem;
+  background-color: ${({ background }) => background || 'black'};
+  border-radius: ${BORDER_RADIUS};
+  width: 5rem;
+  height: 2rem;
+  cursor: pointer;
+  color: white;
 `
 
-const Button = (props) => (
-  <StyledButton background="red">
-    {props.content}
+const Button: React.FC<ButtonProps> = ({ background, children }) => (
+  <StyledButton background={background}>
+    {children}
   </StyledButton>
 )
 

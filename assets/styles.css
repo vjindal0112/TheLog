@@ -1,6 +1,12 @@
 @import "~normalize.css";
 @import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
 
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html {
   margin: 0;
   padding: 0;
